@@ -1,0 +1,41 @@
+<div class="card mt-2">
+    <div class="card-header text-bg-info"> 
+        Detalles del stock
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Precio por unidad</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of productoService.productos">
+                    <td>{{ producto.nombre}}</td> 
+                    <td>{{ producto.marca }}</td> 
+                    <td>{{ producto.precioXUnidad }}</td> 
+                    <td>{{ producto.cantidad }}</td> 
+                    <td>
+                        <button 
+                            type="button" 
+                            class="btn btn-success"
+                            (click)="productoService.editarProducto(producto._id)"
+                        > + </button>
+                    </td>
+                    <td>
+                        <button 
+                            type="button" 
+                            class="btn btn-danger"
+                            (click)="productoService.eliminarProducto(producto._id)"
+                        > x </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>

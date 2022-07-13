@@ -1,0 +1,49 @@
+<div class="card mt-2">
+    <div class="card-header text-bg-secondary">
+        Información del producto
+    </div>
+    <div class="card-body">
+        <form class="d-flex">
+            <input 
+                class="form-control me-2" 
+                type="text"
+                name="nombre"
+                placeholder="Nombre del producto"
+                [(ngModel)] = "productoService.producto.nombre"
+                required
+            />
+            <input 
+                class="form-control me-2" 
+                type="text" 
+                name="marca"
+                placeholder="Marca del producto"
+                [(ngModel)] = "productoService.producto.marca"
+                required
+            />
+            <input 
+                class="form-control me-2" 
+                type="number" 
+                name="precioXUnidad"
+                placeholder="Precio por unidad" 
+                min="0"
+                [(ngModel)] = "productoService.producto.precioXUnidad"
+                required
+            />
+            <input 
+                class="form-control me-2" 
+                type="number" 
+                name="cantidad"
+                placeholder="Cantidad de unidades" 
+                min="1"
+                [(ngModel)] = "productoService.producto.cantidad"
+                required
+            />
+            <input 
+                type="submit" 
+                class="btn btn-primary" 
+                value="{{ productoService.accion }}"
+                (click)="productoService.agregarProducto($event)"
+            />
+        </form>
+    </div>
+</div>

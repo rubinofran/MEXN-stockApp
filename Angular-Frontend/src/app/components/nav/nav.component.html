@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../favicon.ico" alt="">
+            MEAN-StockApp
+        </a>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active disabled" href="#">Monto total: {{ obtenerTotal() }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active disabled" href="#">Productos: {{ productoService.productos.length }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    <select name="select" (change)="onChangE($event)">
+                        <option selected disabled>Producto - Marca</option>
+                        <option *ngFor="let producto of productoService.productos" [value]="producto.precioXUnidad + ';' + producto.cantidad"> {{producto.nombre}} - {{producto.marca}}</option>
+                    </select>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active disabled" href="#">
+                    <b>Unidades:</b> {{ precio }}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active disabled" href="#">
+                    <b>Precio:</b> {{ cantidad }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

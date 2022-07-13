@@ -1,0 +1,32 @@
+# Utilizando la extensión REST Client (VSC) 
+### Obtener todos
+GET http://localhost:3000/api/productos
+
+### Obtener uno
+GET http://localhost:3000/api/productos/62c65728e9c62e5917a79888 
+
+### Crear uno
+POST http://localhost:3000/api/productos
+Content-Type: application/json
+
+{
+    "nombre": "Alfajor",
+    "marca": "Block",
+    "precioXUnidad": 180,
+    "cantidad": 20
+}
+
+### Actualizar uno
+PUT http://localhost:3000/api/productos/62c65c639064c83f4daf5281
+Content-Type: application/json
+
+{
+    "nombre": "Alfajor",
+    "marca": "Jorgelín",
+    "precioXUnidad": 120,
+    "cantidad": 50
+}
+
+### Eliminar uno
+DELETE http://localhost:3000/api/productos/62c65c639064c83f4daf5281 
+
